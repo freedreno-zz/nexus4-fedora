@@ -1,0 +1,11 @@
+./usr/libexec/pt_chown = cap_chown,cap_fowner+ep
+./usr/bin/rsh = cap_net_bind_service+ep
+./usr/bin/systemd-detect-virt = cap_dac_override,cap_sys_ptrace+ep
+./usr/bin/gnome-keyring-daemon = cap_ipc_lock+ep
+./usr/bin/rlogin = cap_net_bind_service+ep
+./usr/bin/ping = cap_net_admin,cap_net_raw+ep
+./usr/bin/rcp = cap_net_bind_service+ep
+./usr/bin/ping6 = cap_net_admin,cap_net_raw+ep
+./usr/sbin/mtr = cap_net_raw+ep
+./usr/sbin/arping = cap_net_raw+ep
+./usr/sbin/clockdiff = cap_net_raw+ep

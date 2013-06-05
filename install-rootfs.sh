@@ -35,6 +35,10 @@ done
 
 echo "** Cleaning up"
 
+# to save a bit of space, we can nuke unneeded kernel modules (since
+# they won't match the kernel we are using anyways)
+adb shell rm -rf $root/lib/modules
+
 adb shell umount /data/scratch
 adb shell rmdir /data/scratch
 adb shell rm $bb

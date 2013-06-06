@@ -32,7 +32,9 @@ fi
 # installed??
 if ! [ -x /usr/sbin/gdm ]; then
 	echo "**** Installing desktop"
-	yum install xorg-x11-server-Xorg xorg-x11-drv-evdev ConsoleKit ConsoleKit-x11 @gnome-desktop
+	# the --nogpgcheck isn't ideal, but at the moment there seems to be
+	# windows of time when things aren't signed properly in f19-arm..
+	yum install --nogpgcheck xorg-x11-server-Xorg xorg-x11-drv-evdev ConsoleKit ConsoleKit-x11 @gnome-desktop
 	glib-compile-schemas /usr/share/glib-2.0/schemas/
 	# run first-boot graphical setup:
 	#/bin/xinit /bin/firstboot-windowmanager /bin/initial-setup -- /bin/Xorg :9 -ac -nolisten tcp

@@ -7,9 +7,9 @@
 3. Reboot device, hold down volume-down key to get to fastboot screen
 4. At fastboot screen, `sudo fastboot boot boot/mako-boot.img`
   * This will not flash this kernel, so next time you reboot you are back to your original kernel.
-5. Run `./install-rootfs.sh`
-6. Optional (but recommended), enable USB tethering so that you can connect to the device over ssh.
+5. Enable USB tethering so that you can connect to the device over ssh.
   * Settings -> More... -> Tethering & portable hotspot -> USB tethering
+6. Run `install-rootfs.sh`
 7. Connect to device: `adb shell`
 8. On device, start chroot: `/data/fedora/start-chroot.sh`
   * NOTE: have a network connection, preferably WiFi.. on first boot, it will try to install X11, gnome-desktop, etc.

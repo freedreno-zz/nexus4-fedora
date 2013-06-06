@@ -33,6 +33,12 @@ for f in rootfs/*.tar.gz; do
 	fi
 done
 
+for f in chroot-scripts/*.sh; do
+	echo "**** Installing: $f"
+	adb push $f $root
+	adb shell chmod 755 $root/`basename $f`
+done
+
 echo "** Cleaning up"
 
 # to save a bit of space, we can nuke unneeded kernel modules (since
@@ -41,4 +47,4 @@ adb shell rm -rf $root/lib/modules
 
 adb shell umount /data/scratch
 adb shell rmdir /data/scratch
-adb shell rm $bb
+

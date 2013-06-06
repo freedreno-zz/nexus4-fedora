@@ -1,5 +1,6 @@
 
-path=`/system/xbin/busybox dirname $0`
+bb="/data/fedora/busybox"
+path=`$bb dirname $0`
 PS1="\[\033[1;36m\][\[\033[0;36m\]\u@\h\[\033[0;37m\]:\w\[\033[1;36m\]]\[\033[m\]$ \[\033[0;37;00m\]"
 filesystems="/proc /dev"
 
@@ -19,7 +20,7 @@ mount -t devpts -o rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=00
 mount -t tmpfs tmpfs $path/tmp
 
 # Start chroot:
-PATH="/bin:/usr/bin:/sbin:/usr/sbin" /system/xbin/busybox chroot $path /enter-chroot.sh
+PATH="/bin:/usr/bin:/sbin:/usr/sbin" $bb chroot $path /enter-chroot.sh
 
 sleep 1
 

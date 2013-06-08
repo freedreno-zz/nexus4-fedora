@@ -21,6 +21,11 @@
 4. The MSM display driver is, umm, quirky.. to avoid problems with the display getting stuck off or backlight-disabled, make sure the screen is on when you run start-chroot.sh.  Also ensuring the display is on when you start-chroot.sh will make sure wifi is up.
 5. To activate the hot-corner to get the overview mode (ie. what you get with the super (windows) key on a desktop), swipe up and to the left into the top left corner of the display.
 
+## Extra stuff I install
+This gives you everything you need to rebuild freedreno (libdrm, ddx, mesa) from git:
+yum install @development-tools automake autoconf xorg-x11-server-devel libX11-devel libXext-devel libtool libXau-devel libXdamage-devel libXfixes-devel libXxf86vm-devel libxcb-devel pixman-devel xorg-x11-proto-devel xorg-x11-util-macros gcc-c++ vim strace git tig htop
+yum-builddep mesa-libGL
+
 ## TODO:
 - [ ] figure out a way to fix ARGB vs ABGR issues that doesn't mess up colors in android
 - [ ] mounts don't always get cleaned up properly when exiting

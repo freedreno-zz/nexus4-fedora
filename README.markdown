@@ -5,6 +5,7 @@
 2. Install adb plus fastboot and optionally abootimg
   * for fedora host, `sudo yum install android-tools abootimg`
 3. Reboot device, hold down volume-down key to get to fastboot screen
+  * or `adb reboot bootloader`
 4. At fastboot screen, `sudo fastboot boot boot/mako-boot.img`
   * This will not flash this kernel, so next time you reboot you are back to your original kernel.
 5. Enable USB tethering so that you can connect to the device over ssh.

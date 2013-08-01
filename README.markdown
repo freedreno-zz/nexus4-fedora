@@ -1,7 +1,7 @@
 # Installing Fedora F19 on Nexus 4
 1. Put device in developer mode (if not done already), see for example:
-  * http://geekcaves.blogspot.com/2013/05/how-to-unlock-developer-options-on.html
-  * TODO, better link?
+  * http://www.androidcentral.com/how-enable-developer-settings-android-42
+  * then `sudo fastboot oem unlock` from fastboot menu
 2. Install adb plus fastboot and optionally abootimg
   * for fedora host, `sudo yum install android-tools abootimg`
 3. Reboot device, hold down volume-down key to get to fastboot screen
